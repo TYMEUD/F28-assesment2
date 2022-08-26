@@ -35,8 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((total, item) => total + item.price,0)
 
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +56,12 @@ const cart = [
 
 //CODE HERE
 
-
+const calcFinalPrice = (carTotal, couponValue, tax) => {
+    let taxApp = carTotal * (1 + tax) 
+    let couponApp = taxApp - couponValue
+    return couponApp
+}
+console.log(calcFinalPrice(7000, 500, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +85,11 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    //for my customer object I decided on these four parameters. 
+    first is age because the restaurant would want to know if the customer is older than 21 for bar seating or drink menu etc. Data will be a number value
+    second is if the customer is vegan or not for menu with vegan options. data will be stored as boolean
+    third will be the entree option that the customer orders and will be a string type
+    fourth will be the name of the customer so we can see who ordered which items. Data will be a string
 
 */
 
@@ -88,3 +99,10 @@ const cart = [
 */
 
 //CODE HERE
+
+let Customer = {
+    age: 22,
+    vegan: false,
+    entree: "Tacos",
+    name: "Cornelious",
+}
